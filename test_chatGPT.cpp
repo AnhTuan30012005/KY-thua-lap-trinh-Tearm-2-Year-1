@@ -1,25 +1,31 @@
-#include <iostream>
-#include <sstream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
+int main()
+{
+    string mot ;
+    string hai ;
 
-int main() {
-    string name;
-    getline(cin, name);
+    string key = "";
 
-    stringstream ss(name);
-    vector<string> words;
-    string word;
+    getline( cin , mot);
+    getline( cin , hai);
+
+    int i = 0;
+    int j = 0;
+    while ( i < mot.length() || j < hai.length())
+    {
+        if( i < mot.length() ) {
+            key += mot[i];
+        }
+        if( j < hai.length() ) {
+            key += hai[i];
+        }
+
+        i++;
+        j++;
+    }
     
-    // Đọc từng từ từ chuỗi và lưu vào vector
-    while (ss >> word) {
-        words.push_back(word);
-    }
-
-    // In ngược từng từ trong vector
-    for (int i = words.size() - 1; i >= 0; i--) {
-        cout << words[i] << " ";
-    }
-
-    return 0;
+    cout  << key << endl; 
+    
+    return 0;    
 }
